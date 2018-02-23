@@ -1,5 +1,8 @@
 pragma solidity ^0.4.17;
-
+/**
+ * @title Usernames
+ * @dev Username operations with duplication checks
+ */
 contract Usernames {
     
     mapping(address => string) private usernames;

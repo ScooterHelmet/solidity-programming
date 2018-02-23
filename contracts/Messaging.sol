@@ -1,4 +1,8 @@
 pragma solidity ^0.4.17;
+/**
+ * @title MessagingContract
+ * @dev Message operations with feed checks
+ */
 contract MessagingContract {
     struct Message {
         string data;

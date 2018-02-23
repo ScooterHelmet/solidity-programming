@@ -1,5 +1,8 @@
 pragma solidity ^0.4.17;
-
+/**
+ * @title Migrations
+ * @dev Migrations for truffle that track owned contracts. The numbering convention is x_script_name.js, with x starting at 1
+ */
 contract Migrations {
   address public owner;
   uint public last_completed_migration;
