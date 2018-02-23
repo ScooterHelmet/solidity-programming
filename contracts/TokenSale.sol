@@ -8,9 +8,7 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
-    // assert(a == b * c + a % b); // There is no case in which this doesn't hold
     return c;
   }
 
@@ -162,7 +160,8 @@ contract ServusToken is Controllable {
   bool public transfersEnabled;
 
   bool public masterTransfersEnabled;
-  address public masterWallet = 0x9d23cc4efa366b70f34f1879bc6178e6f3342441;
+  address public masterWallet = 0x740A1B714B39E3E8126BD87CD6C9171b3D8c2e91;
+  
 
 
   struct Checkpoint {
@@ -177,7 +176,7 @@ contract ServusToken is Controllable {
   bool public mintingFinished = false;
   bool public presaleBalancesLocked = false;
 
-  uint256 public constant TOTAL_PRESALE_TOKENS = 2896000000000000000000;
+  uint256 public constant TOTAL_PRESALE_TOKENS = 28960000000000000;
 
   event Mint(address indexed to, uint256 amount);
   event MintFinished();
@@ -189,13 +188,15 @@ contract ServusToken is Controllable {
 
 
 
-  function ServusToken(
+  function ServusToken (
     address _tokenFactory,
     address _parentToken,
     uint256 _parentSnapShotBlock,
     string _tokenName,
     string _tokenSymbol
-    ) public {
+    ) 
+    public 
+    {
       tokenFactory = TokenFactoryInterface(_tokenFactory);
       parentToken = ServusTokenInterface(_parentToken);
       parentSnapShotBlock = _parentSnapShotBlock;
@@ -205,7 +206,7 @@ contract ServusToken is Controllable {
       transfersEnabled = false;
       masterTransfersEnabled = false;
       creationBlock = block.number;
-      version = '0.1';
+      version = "0.1";
   }
 
   function() public payable {
